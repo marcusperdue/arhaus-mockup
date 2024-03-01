@@ -1,0 +1,80 @@
+/* Navigation.css */
+
+.header {
+    position: relative;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    max-width: 1500px;  
+    margin: 0 auto;  
+    border-bottom: 1px solid #edece8 ;
+    position: relative;
+  }
+  
+  .nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .nav-item {
+    margin: 0 5px;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: #222222;;
+    font-family: "Neue Haas Unica", sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    padding: 22px 20px;
+  }
+  
+  .nav-item a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 1200px) {
+    .navigation {
+      display: none; 
+      
+    }
+  
+    .nav-list.active {
+      display: flex;  
+    }
+  
+    .mobile-nav-toggle {
+      display: block;  
+    }
+  }
+  
+
+
+  .sub-menu {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 100%; /* Position the submenu below the navigation */
+    background-color: white; /* Background color of the submenu */
+    padding: 10px; /* Adjust padding as needed */
+    border: 1px solid #ccc; /* Add border for visibility */
+    border-top: none; /* Remove top border to align with navigation */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    max-height: 500px; /* Limit the height of the submenu */
+    overflow-y: auto; /* Enable scrolling for long submenus */
+  }
+  
+  .sub-menu li {
+    margin-bottom: 10px; /* Add spacing between submenu items */
+  }
+  
+  .sub-menu li:last-child {
+    margin-bottom: 0; /* Remove bottom margin for the last submenu item */
+  }

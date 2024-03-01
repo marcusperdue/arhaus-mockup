@@ -1,0 +1,174 @@
+.nav-mobile-toggle {
+    position: absolute;
+    top: 20px; /* Adjust vertical position as needed */
+    left: 20px; /* Initially positioned on the left corner */
+    cursor: pointer;
+    display: none;
+    margin-right: 20px;
+
+     
+  }
+  @media screen and (max-width: 1200px) {
+    .nav-mobile-toggle {
+      display: block;
+    }
+  }
+  
+  .nav-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;   
+    height: 25px;  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+    z-index: 1002; /* High enough to be on top, adjust if necessary */
+    background: transparent;
+    border: none;
+    outline: none;
+    
+  }
+  
+  .nav-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #000000;  
+    transition: all 0.5s ease;  
+  }
+  
+  /* Transformations for active state */
+  .nav-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .nav-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  .bar {
+    width: 25px;
+    height: 1px;
+    background-color: #000;
+    margin: 5px 0;
+  }
+  
+  .nav-mobile {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Initially off screen */
+    width: 100%; /* Adjust the width as needed */
+    height: 100%;
+    background-color: #fff; /* Initial state with white background */
+    transition: left .9s ease; /* Transition for sliding animation */
+    z-index: 999;
+    overflow-y: auto; /* Enable scrolling for the menu */
+  }
+  
+  .nav-mobile.active {
+    left: 0; /* Slide in from the left when active */
+  }
+  
+  .nav-mobile.active .nav-mobile-overlay {
+    pointer-events: auto; /* Enable clicks when overlay is visible */
+    opacity: 1; /* Fully visible */
+  }
+  
+  .nav-container {
+    padding: 20px; /* Adjust spacing as needed */
+  }
+  
+  .nav-logo {
+    max-width: 100px; /* Adjust the max-width of the logo as needed */
+    display: none; /* Initially hidden */
+  }
+  
+  .nav-logo.active {
+    display: block; /* Show the logo when active */
+  }
+  
+  .nav-mobile a {
+    text-decoration: none;
+    color: black;
+    font-family: "Neue Haas Unica", sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    padding: 22px 20px;
+  }
+  
+/* Close button (X) */
+.nav-close {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 40px; /* Increase the width of the clickable area */
+    height: 40px; /* Increase the height of the clickable area */
+    cursor: pointer;
+    z-index: 1000; 
+}
+
+/* X-line style */
+.x-line {
+    width: 24px;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+/* Adjust the positioning of the X lines to form an X */
+.x-line:nth-child(1) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg); /* Center the X and rotate it */
+}
+
+.x-line:nth-child(2) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg); /* Center the X and rotate it */
+}
+
+
+.mobile-nav-list {
+    position: relative;
+    display: block;
+    padding: 0; /* Reset default padding */
+    list-style: none; /* Remove default list styles */
+}
+
+.mobile-nav-item {
+    text-transform: uppercase;
+    text-decoration: none;
+    border-top: 1px solid #edece8;
+}
+
+.mobile-nav-item a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #222222;
+  text-decoration: none;
+}
+
+
+.mobile-nav-item:hover {
+    background-color: #f7f7f7; /* Change background color on hover */
+}
+
+.mobile-nav-item a svg {
+  width: 20px; /* Adjust the width of the SVG */
+  height: 20px; /* Adjust the height of the SVG */
+  
+}
+
+.mobile-nav-item a svg polyline {
+  stroke: #222222; /* Change the color of the arrow */
+}
+  
